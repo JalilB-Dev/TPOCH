@@ -13,7 +13,7 @@ def tod():
 	elif 18 <= time_of_day <= 20:
 		return "Evening"
 	
-	elif 5 >= time_of_day or time_of_day => 21:
+	elif 5 >= time_of_day or time_of_day >= 21:
 		return "Night"
 	
 
