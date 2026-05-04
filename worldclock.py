@@ -30,7 +30,8 @@ def show_time(city, timezone):
 
 def show_local():
 	local_time = datetime.now()
-	print("Local: " + local_time.strftime("%I:%M %p") + "at ", tod())
+	print("Local: " + local_time.strftime("%I:%M %p"))
+
 
 
 
@@ -55,7 +56,7 @@ cities = [
 try:
 	while True:
 		os.system("clear")
-		show_local()
+		print(tod(), show_local())
 		for city in cities:
 			show_time(city["name"], city["timezone"])
 		
