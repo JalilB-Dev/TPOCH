@@ -5,6 +5,23 @@ import os
 
 
 
+
+
+def tod():
+	time_of_day = datetime.hour()
+	if 6 < time_of_day < 17:
+		print("Day")
+	
+	elif 18 < time_of_day < 20:
+		print("Evening")
+	
+	elif 5 > time_of_day > 21:
+		print("Night")
+	
+	else:
+		print(tod())
+
+
 def show_time(city, timezone):
 	current_time = datetime.now(ZoneInfo(timezone))
 	print(city + ": " + current_time.strftime("%A, %B %d %I:%M %p %Z"))
@@ -13,7 +30,7 @@ def show_time(city, timezone):
 
 def show_local():
 	local_time = datetime.now()
-	print("Local: " + local_time.strftime("%I:%M %p"))
+	print("Local: " + local_time.strftime("%I:%M %p") + "at" + tod)
 
 
 
@@ -38,7 +55,7 @@ cities = [
 try:
 	while True:
 		os.system("clear")
-
+		show_local()
 		for city in cities:
 			show_time(city["name"], city["timezone"])
 		
