@@ -8,7 +8,7 @@ import os
 
 
 def tod():
-	time_of_day = datetime.hour()
+	time_of_day = datetime.now().hour
 	if 6 < time_of_day < 17:
 		print("Day")
 	
