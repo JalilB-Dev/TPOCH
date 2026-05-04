@@ -53,7 +53,8 @@ cities = [
 try:
 	while True:
 		os.system("clear")
-		print(tod(), show_local())
+		print("Time of Day: ", tod())
+		print(show_local())
 		for city in cities:
 			show_time(city["name"], city["timezone"])
 		
