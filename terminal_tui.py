@@ -2,7 +2,7 @@ import pyfiglet
 from rich.console import Console
 from rich.text import Text
 from rich.panel import Panel
-
+from rich.layout import Layout
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
@@ -25,10 +25,12 @@ class TerminalTUI:
                            )
 
     def display_time(self, cities):
-        time_text = Text(justify="left", style="#00ff41")
+        layout = Layout()
+
         for city in cities:
+            time_text = Text(justify="left", style="#00ff41")
             current_time = datetime.now(ZoneInfo(city["timezone"]))
             line = f"{city['name']}: {current_time.strftime('%A, %B %d %I:%M %p %Z')}\n"
             time_text.append(line)
-        time_panel = Panel(time_text, border_style="#d474ff")
-        self.Console.print(time_panel)
+            time_panel = Panel(time_text, border_style="#d474ff")
+            self.Console.print(time_panel)
