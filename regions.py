@@ -1,3 +1,7 @@
+import datetime
+from zoneinfo import ZoneInfo
+
+
 cities = [
     {"name": "New York", "timezone": "America/New_York"},
     {"name": "London", "timezone": "Europe/London"},
@@ -12,3 +16,7 @@ cities = [
     {"name": "Sāo Paulo", "timezone": "America/Sao_Paulo"},
     {"name": "Moscow", "timezone": "Europe/Moscow"}
 ]
+
+
+sorted_cities = sorted(
+    cities, key=lambda x: datetime.datetime.now(ZoneInfo(x["timezone"])).utcoffset())

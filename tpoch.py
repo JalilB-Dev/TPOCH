@@ -3,7 +3,7 @@ import time
 from datetime import datetime
 from zoneinfo import ZoneInfo
 from terminal_tui import TerminalTUI
-from regions import cities
+from regions import cities, sorted_cities
 
 
 def tod():
@@ -28,7 +28,7 @@ try:
         os.system("clear")
         tui = TerminalTUI()
         tui.display_header()
-        tui.display_time(cities)
+        tui.display_time(sorted_cities)
         print("Time of Day: ", tod())
         print(show_local())
         print("Last Updated: ", datetime.now().strftime("%I:%M %p"))
